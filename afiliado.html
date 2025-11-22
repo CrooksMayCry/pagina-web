@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crooks May Cry | Hazte Afiliado</title>
+<link rel="icon" type="image/png" href="img/favicon.ico.png">
+<link rel="stylesheet" href="css/style.css">
+
+<meta name="description" content="Crooks May Cry - Partido joven con visión clara. Conoce nuestro programa oficial y únete como afiliado.">
+<meta name="keywords" content="Crooks May Cry, partido político, afiliación, política joven, nuevo partido, transparencia, programa político, CMC">
+<meta name="author" content="Crooks May Cry">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Crooks May Cry - Proyecto político joven y transparente">
+<meta property="og:description" content="Descubre el programa oficial del partido Crooks May Cry y únete como afiliado.">
+<meta property="og:image" content="https://TU-DOMINIO.com/img/logo.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://TU-DOMINIO.com/">
+
+
+</head>
+
+<body class="fade">
+
+<header class="header">
+  <img src="img/logo.png" class="logo" alt="Logo">
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="programa.html">Programa</a>
+    <a href="afiliado.html" class="active">Hazte Afiliado</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<section class="contact-section">
+<h2>Hazte Afiliado</h2>
+<p>Forma parte del cambio. Déjanos tu correo para contar contigo y mantenerte informado.</p>
+
+<form action="https://usebasin.com/f/47a21c6393f6" method="POST" class="contact-form">
+<label style="display:none">Web<input type="text" name="website" autocomplete="off"></label>
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+ <!-- Honeypot: campo invisible para humanos -->
+  <label style="display:none">Website
+    <input type="text" name="website" id="hp_website" autocomplete="off">
+  </label>
+ <!-- Timestamp (para comprobar tiempo mínimo antes de enviar) -->
+  <input type="hidden" name="ts" id="ts" value="">
+
+
+
+
+
+
+
+<div class="field-group">
+<label>Nombre</label>
+<input type="text" name="nombre" placeholder="Tu Nombre(Obligatorio)"required>
+</div>
+<div class="field-group">
+<label>Apellidos</label>
+<input type="text" name="apellidos" placeholder="Tus apellidos(Obligatorio)" required>
+</div>
+
+<div class="field-group">
+<label>Email</label>
+
+<input type="email" name="email" placeholder="Tu correo electrónico(Obligatorio)" required>
+</div>
+
+
+<div class="field-group">
+<label>¿A que partido politico votas?</label>
+<textarea name="votantes" rows="5" placeholder="Pon el partido politico aqui(Opcional)"></textarea>
+</div>
+    <div class="field-group">
+      <label>
+        <input type="checkbox" name="consent" value="yes" required>
+        Acepto la <a href="privacy.html" target="_blank">política de privacidad</a>.
+      </label>
+    </div>
+
+<button type="submit" class="btn">Hacerme afiliado</button>
+<div id="af_msg"></div>
+</form>
+</section>
+
+
+<footer>
+<div class="social-links">
+<a href="https://www.tiktok.com/@crooks.may.cry" target="_blank"><img src="img/tiktok.png"></a>
+<a href="https://www.instagram.com/crooks_may_cry/" target="_blank"><img src="img/instagram.png"></a>
+<a href="https://x.com/Crook_May_Cry" target="_blank"><img src="img/x.png"></a>
+</div>
+
+
+© <span id="year3"></span> Crooks May Cry.
+<div class="support">Soporte técnico: <a href="mailto:crooksmaycry.contacto@gmail.com">crooksmaycry.contacto@gmail.com
+</a></div>
+<div><a href="legal.html" style="color:#ff88d8;">Política legal y licencia</a></div>
+
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', ()=> {
+    const ts = document.getElementById('ts_af');
+    const form = document.getElementById('afiliadoForm');
+    const msg = document.getElementById('af_msg');
+    ts.value = Date.now();
+    form.addEventListener('submit', e=>{
+      const hp = form.querySelector('input[name="website"]');
+      if(hp && hp.value.trim() !== '') { e.preventDefault(); msg.textContent='Spam detectado'; return; }
+      if(Date.now() - parseInt(ts.value,10) < 2000) { e.preventDefault(); msg.textContent='Por favor, espera un momento antes de enviar.'; return; }
+    });
+    document.getElementById('year3').textContent = new Date().getFullYear();
+  });
+</script>
+
+</body>
+</html>
+
