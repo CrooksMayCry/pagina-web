@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Crooks May Cry | Programa</title>
+  <link rel="icon" type="image/png" href="img/favicon.ico.png">
+
+  <meta name="description" content="Crooks May Cry - Partido joven con visión clara. Conoce nuestro programa oficial y únete como afiliado.">
+  <meta name="keywords" content="Crooks May Cry, partido político, afiliación, política joven, nuevo partido, transparencia, programa político, CMC">
+  <meta name="author" content="Crooks May Cry">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Crooks May Cry - Proyecto político joven y transparente">
+  <meta property="og:description" content="Descubre el programa oficial del partido Crooks May Cry y únete como afiliado.">
+  <meta property="og:image" content="https://TU-DOMINIO.com/img/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://TU-DOMINIO.com/">
+
+  <style>
+    /* Reset y base */
+    :root{
+      --accent1: #ff3e8a;
+      --accent2: #ff88d8;
+      --bg:#06060a;
+      --card: rgba(255,255,255,0.04);
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#050507 0%, #0a0a0f 100%);
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+
+    /* Header */
+    .header{
+      position:fixed; top:0; left:0; right:0;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 28px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.15));
+      backdrop-filter: blur(6px);
+      z-index:1000;
+      border-bottom: 1px solid rgba(255,255,255,0.02);
+    }
+    .header .logo{height:56px; filter: drop-shadow(0 6px 18px rgba(255,40,120,0.12));}
+    .header nav a{
+      color:var(--accent2);
+      margin-left:20px;
+      text-decoration:none;
+      font-weight:700;
+      transition: .18s;
+    }
+    .header nav a.active, .header nav a:hover{
+      color:#fff;
+      text-shadow: 0 0 10px rgba(255,60,140,0.18);
+    }
+
+    /* Contenedor principal */
+    main.program-container{
+      padding-top:100px;
+      padding-bottom:80px;
+      max-width:1150px;
+      margin:0 auto;
+    }
+    h1.page-title{
+      text-align:center;
+      margin:36px 20px 8px;
+      font-size:2.1rem;
+      letter-spacing:0.2px;
+      text-shadow:0 0 12px rgba(255,0,106,0.12);
+    }
+    .program-meta{
+      text-align:center;
+      color: #ffb3e6;
+      margin-bottom:8px;
+    }
+    .download-pdf{
+      display:inline-block;
+      margin-left:8px;
+      padding:8px 12px;
+      border-radius:10px;
+      background: linear-gradient(90deg,var(--accent1),#ff6f9f);
+      color:white;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 8px 20px rgba(255,50,120,0.12);
+    }
+
+    /* pestañas */
+    .program-tabs{
+      display:flex; justify-content:center; gap:12px; margin:28px auto 20px; flex-wrap:wrap;
+    }
+    .program-tab{
+      padding:10px 20px; border-radius:12px; cursor:pointer;
+      background: transparent; border:1px solid rgba(255,255,255,0.04);
+      color:var(--accent2); font-weight:700;
+    }
+    .program-tab.active{
+      background:linear-gradient(90deg,var(--accent1),#ff6f9f);
+      border-color:transparent; color:#fff; box-shadow:0 8px 30px rgba(255,60,140,0.12);
+    }
+
+    /* Secciones */
+    .program-section{ display:none; padding:10px 18px 40px; }
+    .program-section.active{ display:block; }
+
+    /* Cards (programa) */
+    .program-content{ max-width:980px; margin:0 auto; padding:0 12px; }
+    .program-card{
+      background: var(--card);
+      border-radius:14px; padding:22px; margin:26px 0;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+      position:relative; overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.02);
+    }
+    .program-card h2{ margin-top:0; color:#ffd5ef; text-shadow:0 0 8px rgba(255,20,120,0.06) }
+    .program-card h3{ color:#ffb3e6 }
+    .program-card ul{ margin-left:18px }
+
+    .asomando{ position:absolute; top:-10px; width:110px; opacity:0.12; right:12px; filter: drop-shadow(0 6px 18px rgba(255,40,120,0.06)); }
+
+    /* TIMELINE vertical estilo A */
+    .timeline {
+      position:relative;
+      margin:40px auto 30px;
+      padding: 30px 0;
+      max-width:900px;
+    }
+    /* línea central */
+    .timeline::before{
+      content:"";
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      top:0; bottom:0;
+      width:4px;
+      background: linear-gradient(180deg, rgba(255,62,138,0.25), rgba(255,62,138,0.08));
+      border-radius:4px;
+      box-shadow:0 0 30px rgba(255,62,138,0.04);
+    }
+    .timeline-item{
+      position:relative;
+      width:calc(50% - 40px);
+      padding:18px 22px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;
+      margin:18px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.03);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .timeline-item:hover{ transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+
+    .timeline-item.left{
+      left:0;
+      margin-right: auto;
+    }
+    .timeline-item.right{
+      left:50%;
+      transform: translateX(30px); /* shift to the right column */
+    }
+    /* pointer from central line */
+    .timeline-item::after{
+      content:"";
+      position:absolute;
+      top:22px;
+      width:16px; height:16px;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      border-radius:50%;
+      box-shadow:0 6px 18px rgba(255,62,138,0.12);
+      border:3px solid #0a0a0f;
+    }
+    .timeline-item.left::after{
+      right:-32px;
+    }
+    .timeline-item.right::after{
+      left:-32px;
+    }
+    .timeline-year{
+      display:flex; align-items:center; gap:12px; margin-bottom:8px; font-weight:800;
+      color:#fff;
+    }
+    .timeline-year .dot{
+      width:44px; height:44px; border-radius:50%;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      box-shadow:0 8px 30px rgba(255,62,138,0.12);
+      font-size:0.95rem;
+      font-weight:900;
+    }
+    .timeline-body{ color:#f7e8f3; font-size:0.95rem; }
+
+    /* Responsive */
+    @media (max-width:900px){
+      .timeline::before{ left:20px; transform:none; width:3px; }
+      .timeline-item{ width:100%; left:0 !important; transform:none; margin-left:46px; }
+      .timeline-item::after{ left:12px !important; right:auto; }
+    }
+
+    /* Footer */
+    footer{
+      margin-top:40px; padding:30px 18px; text-align:center; color:rgba(255,255,255,0.9);
+      border-top:1px solid rgba(255,255,255,0.02);
+    }
+    .social-links{ display:flex; justify-content:center; gap:20px; margin-bottom:12px }
+    .social-links img{ width:34px; height:34px; opacity:0.9; transition:transform .15s }
+    .social-links img:hover{ transform:scale(1.08) }
+    .credits, .support{ margin-top:8px; color:rgba(255,255,255,0.7); font-size:0.95rem; }
+    .support a{ color:var(--accent2); text-decoration:none; font-weight:700 }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <img src="img/logo.png" class="logo" alt="Logo Crooks May Cry">
+      <div style="font-weight:800;color:#fff">Crooks May Cry</div>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="programa.html" class="active">Programa</a>
+      <a href="afiliado.html">Hazte Afiliado</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="program-container">
+    <h1 class="page-title">Programa Oficial — Crooks May Cry</h1>
+
+    <p class="program-meta">
+      <strong>Puedes descargar el PDF del programa completo aquí ➜</strong>
+      <!-- Ruta local al PDF subido -->
+      <a class="download-pdf" href="\docs\crooks_may_cry_programa.pdf" target="_blank" rel="noopener">Descargar PDF original</a>
+    </p>
+
+    <!-- PESTAÑAS -->
+    <div class="program-tabs" role="tablist" aria-label="Programa tabs">
+      <button class="program-tab active" data-target="completo" type="button">Programa Completo</button>
+      <button class="program-tab" data-target="cronologia" type="button">Cronología (Años)</button>
+    </div>
+
+    <!-- PROGRAMA COMPLETO -->
+    <section id="completo" class="program-section active" aria-labelledby="tab-completo">
+      <div class="program-content">
+        <!-- Aquí van tus cards (mantengo el texto que me diste; he centrado y estructurado) -->
+        <article class="program-card asoma-left">
+          <img class="asomando" src="img/logo-cut.png" alt="" aria-hidden="true">
+          <h2>Primer y Segundo Año de Mandato</h2>
+
+          <h3>1. Objetivo General del Bienio</h3>
+          <p>Durante los dos primeros años de mandato se desarrollará un conjunto de medidas dirigidas a transformar el Estado, garantizar derechos sociales, impulsar la justicia económica y reconstruir la soberanía popular. Este periodo se centrará en reformas estructurales, mejora del bienestar social, transparencia institucional, lucha contra la desigualdad y reordenación estratégica del país.</p>
+        </article>
+
+        <article class="program-card asoma-right">
+          <img class="asomando" src="img/logo-cut.png" alt="" aria-hidden="true">
+          <h2>I. Área Económica</h2>
+          <h3>1. Exención de IRPF para salarios bajos</h3>
+          <ul>
+            <li>Salario anual ≤ 25.000 € → 0 % de IRPF.</li>
+            <li>Salario entre 25.001 € y “sueldo alto” → solo 5 % de IRPF.</li>
+          </ul>
+          <h3>2. Incentivo por hijo</h3>
+          <ul>
+            <li>Para quienes pagan IRPF: 5 % de reducción por hijo sobre el impuesto correspondiente.</li>
+            <li>Para quienes están exentos (≤25.000 €): ayuda directa de 200 €/mes por hijo.</li>
+          </ul>
+          <h3>3. Objetivo</h3>
+          <ul>
+            <li>Aliviar la carga fiscal de trabajadores y familias jóvenes.</li>
+            <li>Incentivar la natalidad.</li>
+            <li>Mantener sostenibilidad del Estado mediante eficiencia del gasto público.</li>
+          </ul>
+        </article>
+
+        <article class="program-card asoma-left">
+          <img class="asomando" src="img/logo-cut.png" alt="" aria-hidden="true">
+          <h2>II. Área de Fomento del Emprendimiento</h2>
+          <h3>1. Apoyo a autónomos y pequeñas empresas</h3>
+          <p>Se implementarán ayudas fiscales para nuevos negocios y pequeñas empresas:</p>
+          <ul>
+            <li>Los nuevos negocios estarán exentos de impuestos.</li>
+            <li>Tributación gradual desde el 25% tras los primeros años.</li>
+            <li>Apoyo solo a negocios nuevos o empresas en dificultades.</li>
+          </ul>
+          <h3>2. Creación de negocios públicos para estabilizar precios</h3>
+          <ul>
+            <li>Supermercados públicos con productos locales a bajo precio.</li>
+            <li>Compra directa a agricultores a precios justos.</li>
+            <li>Reducción de intermediarios y del precio final al consumidor.</li>
+          </ul>
+        </article>
+
+        <!-- Más artículos (he incluido los más representativos, puedes duplicar/pegar estos bloques para añadir todo el contenido si quieres) -->
+        <article class="program-card asoma-right">
+          <img class="asomando" src="img/logo-cut.png" alt="" aria-hidden="true">
+          <h2>III. Área de Política de Restitución de Suelos y Uso Público</h2>
+          <h3>1. Restitución de terrenos expropiados</h3>
+        <p>
+          Los terrenos expropiados o usados para instalaciones energéticas se devolverán a los
+          propietarios originales cuando sea posible; en caso contrario se destinarán a proyectos
+          públicos como bosques o vivienda pública.
+        </p>
+
+        <h3>2. Exenciones del impuesto de sucesiones y donaciones</h3>
+        <p>
+          Se elimina el impuesto para transmisiones por herencia, excepto en casos con deudas
+          pendientes o voluntad explícita del causante.
+        </p>
+        </article>
+
+        <article class="program-card asoma-left">
+          <img class="asomando" src="img/logo-cut.png" alt="" aria-hidden="true">
+          <h2>IV. Área de Cohesión Social, Seguridad y Desarrollo Nacional</h2>
+          <h3 style="color: aqua;">IV.1. Política de Recepción, Alojamiento y Empleo para Personas Migrantes</h3>
+
+  <h3>1. Acogida y diagnóstico inicial</h3>
+  <p>
+    A la llegada, toda persona migrante recibirá evaluación médica y registro administrativo para
+    obtener un documento provisional. Se facilitarán suministros básicos como ropa, higiene y
+    un teléfono económico.
+  </p>
+
+  <h3>2. Alojamiento temporal organizado</h3>
+  <p>
+    Se habilitarán barrios con viviendas prefabricadas con servicios comunes. Cada vivienda
+    albergará a dos personas o una unidad familiar.
+  </p>
+
+  <h3>3. Integración laboral</h3>
+  <p>
+    Acceso a ofertas laborales en obra pública, limpieza urbana, agricultura o construcción.
+    Retribución mínima equivalente al salario exento.
+  </p>
+
+  <h3>4. Protección de personas vulnerables</h3>
+  <p>
+    Mayores, embarazadas o personas con discapacidad tendrán empleos adaptados como
+    comedores o servicios de apoyo.
+  </p>
+
+  <h3>5. Cooperación internacional</h3>
+  <p>
+    Acuerdos con países socios para migración ordenada y reconocimiento de titulaciones.
+  </p>
+
+  <h3>6. Gestión de viviendas ocupadas</h3>
+  <p>
+    Las viviendas ocupadas se devolverán a propietarios. Los ocupantes sin antecedentes serán
+    integrados al sistema de acogida. Quienes tengan delitos adicionales irán a proceso judicial.
+  </p>
+
+  <h3>7. Principios rectores</h3>
+  <p>
+    Respeto estricto a derechos humanos, transparencia y cooperación con administraciones
+    locales.
+  </p>
+        </article>
+
+        <article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+ <h3 style="color: aqua;">IV.2. Bienestar Animal y Acompañamiento Intergeneracional</h3>
+
+  <h3>8. Programa nacional para animales callejeros</h3>
+  <p>
+    Perros y gatos callejeros serán recogidos, vacunados y alimentados. Los perros entrenados
+    portarán collar electrónico que les hará regresar al refugio por la noche.
+  </p>
+
+  <h3>9. Reforma de residencias de mayores</h3>
+  <p>
+    Actividades físicas y cognitivas diarias para reducir caídas y mejorar la salud mental.
+  </p>
+
+  <h3>10. Convivencia entre animales y personas mayores</h3>
+  <p>
+    Mini-refugios en residencias para fomentar compañía, reducir soledad y mejorar salud
+    emocional.
+  </p>
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.3. Reconstrucción Nacional y Vivienda Social</h3>
+
+  <h3>12. Reconstrucción tras catástrofes</h3>
+  <p>
+    Planes de apoyo y nueva vivienda pública para afectados por desastres (ej. La Palma, DANA).
+    Alquiler social con opción a propiedad al terminar de pagar el coste de construcción.
+  </p>
+</article>
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.4. Hacienda Pública y Política Energética</h3>
+
+  <h3>13. Reforma de la Agencia Tributaria</h3>
+  <p>
+    La Agencia Tributaria dejará de ser un organismo persecutorio y pasará a informar y asesorar.
+    Solo casos graves como evasión masiva serán investigados.
+  </p>
+
+  <h3>14. Energía nuclear y servicios básicos públicos</h3>
+  <p>
+    Extracción de uranio y construcción de planta de enriquecimiento. Recuperación pública de luz
+    y agua, reduciendo precios a la mitad (no gratuita para evitar despilfarro).
+  </p>
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.5. Seguridad Ciudadana y Fuerzas Policiales</h3>
+
+  <h3>15. Medidas de seguridad</h3>
+  <ul>
+    <li>Aumento de presupuesto y personal policial.</li>
+    <li>Entrenamiento con pesas, artes marciales y defensa personal.</li>
+    <li>Uso ampliado de herramientas no letales bajo supervisión.</li>
+  </ul>
+</article>
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.6. Reforma Integral de la Justicia y del Sistema Penitenciario</h3>
+
+  <h3>16. Principio de igualdad</h3>
+  <p>
+    Toda persona será juzgada bajo las mismas leyes sin discriminación.
+  </p>
+
+  <h3>17. Delitos leves sin violencia</h3>
+  <p>
+    Multas, trabajos comunitarios y apoyo psicológico.
+  </p>
+
+  <h3>18. Delitos intermedios</h3>
+  <p>
+    Condenas entre 5 y 15 años con acceso a programas educativos, talleres, psicólogos y trabajo
+    remunerado libre de impuestos para generar ahorros.
+  </p>
+
+  <h3>19. Delitos graves</h3>
+  <p>
+    Condenas entre 30 y 40 años. Acceso a programas condicionado al buen comportamiento.
+  </p>
+
+  <h3>20. Filosofía del sistema</h3>
+  <p>
+    Basado en reinserción, trabajo, educación y reducción de reincidencia.
+  </p>
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.7. Televisión Pública</h3>
+  <p>
+    La televisión pública será un medio transparente, basado en datos verificables y sin uso como
+    herramienta de propaganda política.
+  </p>
+</article>
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.8. Libertad y Regulación Técnica del Automovilismo</h3>
+
+  <h3>21. Personalización de vehículos</h3>
+  <p>Se permitirán modificaciones siempre que pasen ITV renovada.</p>
+
+  <h3>22. Espacios seguros para conducción</h3>
+  <p>Circuitos públicos y tramos controlados para evitar carreras ilegales.</p>
+
+  <h3>23. Industria del motor</h3>
+  <p>
+    Impulso a talleres especializados y fabricación nacional de piezas de alto rendimiento.
+  </p>
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.9. Plan Nacional de Riqueza y Reducción de Deuda</h3>
+  <ul>
+    <li>Pago controlado de deuda mediante bonos.</li>
+    <li>Empresa pública de tierras raras.</li>
+    <li>Negocios estatales en sectores clave.</li>
+    <li>Estrategia de ingresos para reducir deuda gradualmente.</li>
+  </ul>
+</article>
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.10. Transparencia y Participación Ciudadana</h3>
+
+  <h3>24. Portal de transparencia</h3>
+  <p>
+    Información detallada de cada céntimo del gasto público.
+  </p>
+
+  <h3>25. Portal de incidencias</h3>
+  <p>
+    Ciudadanos podrán reportar problemas y seguir el estado de resolución.
+  </p>
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">IV.11. Responsabilidad y Rendición de Cuentas de los Mandatarios</h3>
+
+  <ul>
+    <li>Plazo de 6 meses a 1 año para revertir situaciones críticas.</li>
+    <li>Elecciones inmediatas e inhabilitación si no cumple.</li>
+    <li>Si 3 presidentes del mismo partido fallan, el partido queda expulsado.</li>
+  </ul>
+
+  <p>
+    Estas medidas consolidan las bases del mandato para avanzar posteriormente hacia las
+    reformas del tercer año en adelante.
+  </p>
+</article>
+
+
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h2 style="color: plum;">Tercer año en adelante</h2>
+
+  <h2>V.1. Reforma Fiscal Gradual y Progresiva</h2>
+  <p>
+    A medida que crezcan los ingresos del Estado a través de negocios públicos y recursos
+    estratégicos, se aplicará una reducción progresiva de impuestos.
+  </p>
+
+  <h3>Reducción para personas físicas</h3>
+  <ul>
+    <li>Hasta 22.000 € anuales → 0 % de impuestos.</li>
+    <li>Entre 22.000 € y 70.000 € → 15 %.</li>
+    <li>Más de 70.000 € → 25 %.</li>
+  </ul>
+
+  <h3>Reducción para empresas</h3>
+  <p>
+    Impuesto de sociedades unificado al 20 % para impulsar inversión, creación de empresas y
+    competitividad internacional.
+  </p>
+
+  <h3><strong>Objetivo:</strong></h3>Fomentar crecimiento económico, aumentar recaudación eficiente y reducir cargas innecesarias.
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h2>V.2. Reforma Educativa Integral</h2>
+  <p>
+    Gran reforma estructural de educación para fomentar el talento, reducir presión académica y
+    conectar la educación con la vida real.
+  </p>
+</article>
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3 style="color: aqua;">V.2.1 Educación Primaria — Desarrollo Personalizado y Motivador</h3>
+
+  <h3>1. Educación emocional y comunicación</h3>
+  <p>
+    Los niños aprenderán a expresarse, gestionar emociones y trabajar en equipo desde edades
+    tempranas.
+  </p>
+
+  <h3>2. Matemáticas y ciencias progresivas</h3>
+  <p>
+    Enseñanza gradual de matemáticas con apoyo reforzado en caso de habilidades destacadas.
+  </p>
+
+  <h3>3. Refuerzo adaptativo de debilidades</h3>
+  <p>
+    Las asignaturas donde el alumno tenga dificultades tendrán menor peso en la nota, evitando
+    frustración.
+  </p>
+
+  <h3>4. Educación física y hábitos saludables</h3>
+  <p>Mayor peso del deporte en primaria para fomentar salud, disciplina y hábitos correctos.</p>
+
+  <h3>5. Autonomía progresiva</h3>
+  <p>Proyectos simples para preparar a los alumnos para la responsabilidad de institutos grandes.</p>
+
+  <h3><strong>Objetivo:</strong></h3>Potenciar talento individual, corregir debilidades sin desmotivación e inculcar hábitos saludables.
+</article>
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3  style="color: aqua;">V.2.2 ESO y Mega Institutos — Autonomía, Responsabilidad y Aprendizaje Práctico</h3>
+
+  <h3>1. Flexibilidad de asistencia</h3>
+  <p>
+    Hasta 3 días semanales sin penalización si se cumplen tareas, fomentando responsabilidad y
+    gestión del tiempo.
+  </p>
+
+  <h3>2. Educación adaptativa</h3>
+  <p>
+    Cada estudiante reforzará sus puntos fuertes sin dejar de aprender lo básico.
+  </p>
+
+  <h3>3. Educación física obligatoria</h3>
+  <p>
+    Gimnasio, artes marciales y actividades que fomenten disciplina y salud.
+  </p>
+
+  <h3>4. Entorno seguro y autónomo</h3>
+  <p>
+    Institutos con comedores, talleres, lavanderías, espacios de ocio y vigilancia policial.
+  </p>
+
+  <h3>5. Aprendizaje experimental</h3>
+  <p>
+    Clases prácticas de física, química, biología y proyectos reales.
+  </p>
+
+  <h3><strong>Objetivo:</strong></h3>Reducir presión, potenciar talentos, garantizar seguridad y promover aprendizaje real y dinámico.
+</article>
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+  <h3  style="color: aqua;">V.2.3 FP y Bachillerato — Formación Profesional y Académica Avanzada</h3>
+
+  <h3>1. FP práctica y especialización</h3>
+  <p>Talleres reales, prácticas en empresas (incluyendo públicas) y proyectos aplicados.</p>
+
+  <h3>2. Autonomía y responsabilidad</h3>
+  <p>
+    El estudiante gestiona horarios y carga siempre que cumpla proyectos y exámenes.
+  </p>
+
+  <h3>3. Residencias en mega institutos</h3>
+  <p>
+    Alumnos de 17+ podrán vivir en las instalaciones con seguridad y servicios básicos.
+  </p>
+
+  <h3>4. Educación física y bienestar</h3>
+  <p>
+    Entrenamiento físico obligatorio para fomentar salud y disciplina.
+  </p>
+
+  <h3>5. Preparación para la vida adulta</h3>
+  <p>
+    Asignaturas de economía, habilidades sociales, emprendimiento y formación laboral.
+  </p>
+
+  <h3><strong>Objetivo:</strong></h3>Preparar para empleo, estudios superiores o emprendimiento con mezcla de teoría y práctica real.
+</article>
+<!-- ========================================================== -->
+<!-- ====== V.3 — Innovación Científica, Recursos y Energía ===== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+  <h2>V.3. Innovación Científica, Recursos Estratégicos y Energía</h2>
+
+  <h3  style="color: aqua;">V.3.1 Investigación y Desarrollo Estatal</h3>
+  <p>
+    El Estado contratará científicos especializados en medicina, energía, tecnología, defensa y
+    sectores estratégicos. Cada equipo deberá presentar resultados anuales medibles.
+  </p>
+  <p>
+    Los proyectos serán financiados directamente por el gobierno, pudiendo convertirse en
+    tecnología pública o productos comercializables estratégicamente.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ===================  V.3.2 Recursos Estratégicos ========= -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h3  style="color: aqua;">V.3.2 Explotación Estatal de Recursos Estratégicos</h3>
+  <p>
+    El Estado gestionará en exclusiva la extracción de tierras raras y minerales críticos.
+    Otros países podrán comprar materiales, pero no explotar ni manipular la tierra.
+  </p>
+  <p>
+    Los ingresos se destinarán a proyectos públicos, reducción de deuda y expansión de empresas estatales.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ======================== V.3.3 Energía ==================== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h3  style="color: aqua;">V.3.3 Energía y Autosuficiencia Nacional</h3>
+  <ul>
+    <li>Extracción nacional de uranio y construcción de plantas de enriquecimiento.</li>
+    <li>Impulso total a la energía nuclear como fuente limpia, estable y estratégica.</li>
+    <li>Reestatización de luz y agua → precios reducidos a la mitad (no gratuita para evitar despilfarro).</li>
+  </ul>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ====================== V.3.4 Deuda ======================== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h3  style="color: aqua;">V.3.4 Gestión de Deuda y Sostenibilidad</h3>
+  <p>
+    Un equipo especializado de economistas gestionará la deuda mediante bonos y letras,
+    reduciéndola progresivamente gracias al crecimiento de los negocios públicos.
+  </p>
+
+  <h3  style="color: aqua;">V.3.5 Objetivo General</h3>
+  <p>
+    Asegurar desarrollo económico, científico y energético con control total de recursos estratégicos
+    y reducción real de deuda.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ============ V.4 — Reforma del Sistema Sanitario ========== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h2>V.4. Reforma del Sistema Sanitario y Promoción de la Salud</h2>
+
+  <h3  style="color: aqua;">V.4.1 Reforma del Sistema Sanitario</h3>
+
+  <h3>1. Inversión y condiciones laborales</h3>
+  <p>Más inversión, mejores salarios sanitarios y mayor contratación para evitar sobrecarga.</p>
+
+  <h3>2. Infraestructura y equipamiento</h3>
+  <p>
+    Actualización completa de instalaciones, abastecimiento garantizado y adquisición de
+    equipos modernos.
+  </p>
+
+  <h3>3. Atención centrada en el paciente</h3>
+  <p>
+    Personal médico sin presiones externas, priorizando diagnósticos y tratamientos basados en evidencia.
+  </p>
+
+  <h3>Objetivo general</h3>
+  <p>
+    Un sistema sanitario eficiente, moderno y respetuoso con profesionales y pacientes.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ============ V.4.2 Promoción de la salud ================== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h3  style="color: aqua;">V.4.2 Promoción de la Salud y Ejercicio Físico</h3>
+  <ul>
+    <li>Creación de mega centros deportivos públicos con todas las disciplinas.</li>
+    <li>Coordinación con educación y sanidad para prevenir enfermedades.</li>
+    <li>Contratación de entrenadores, nutricionistas y especialistas.</li>
+  </ul>
+
+  <h3>Objetivo:</h3>Fomentar salud, prevenir enfermedades y reducir presión hospitalaria.
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ========= V.5 Ayudas Sociales y Programas de Empleo ======= -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h2>V.5. Revisión de Ayudas Sociales y Programas de Empleo</h2>
+
+  <h3  style="color: aqua;">V.5.1 Control y eficiencia</h3>
+  <p>
+    Todas las ayudas se revisarán para garantizar que solo lleguen a quienes realmente las necesitan.
+  </p>
+
+  <h3  style="color: aqua;">V.5.2 Incorporación laboral</h3>
+  <p>
+    Quienes puedan trabajar participarán en programas de empleo público:
+    educación, infraestructuras, mega gimnasios y empresas estatales.
+  </p>
+
+  <h3  style="color: aqua;">V.5.3 Coordinación con educación y salud</h3>
+  <p>
+    Capacitación y entrenamiento físico para mejorar integración laboral y calidad de vida.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ============== V.6 Sanidad Reproductiva =================== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h2>V.6. Sanidad y Responsabilidad Reproductiva</h2>
+
+  <h3  style="color: aqua;">V.6.1 Límite regulado de abortos voluntarios</h3>
+  <p>Máximo de 3 abortos cubiertos por la sanidad pública.</p>
+
+  <h3  style="color: aqua;">V.6.2 Excepciones</h3>
+  <p>El límite no aplica a menores, violación o riesgo grave para la madre.</p>
+
+  <h3  style="color: aqua;">V.6.3 Responsabilidad compartida</h3>
+  <p>Seguimiento y educación para ambas partes cuando exista reincidencia.</p>
+
+  <h3  style="color: aqua;">V.6.4 Sanción por reincidencia deliberada</h3>
+  <p>Un cuarto aborto implica pena de prisión de 10 años por reincidencia consciente.</p>
+</article>
+<!-- ========================================================== -->
+<!-- ========= V.7 — Enfermedades Neurodegenerativas ========== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h2>V.7. Plan Nacional de Prevención de Enfermedades Neurodegenerativas</h2>
+
+  <h3>Objetivo General</h3>
+  <p>
+    Desarrollar una estrategia nacional para frenar el avance de enfermedades
+    neurodegenerativas y prevenir su aparición, garantizando memoria, movilidad
+    y calidad de vida durante más años.
+  </p>
+
+  <h3  style="color: aqua;">V.7.1 Señuelos terapéuticos específicos</h3>
+  <p>
+    Desarrollo de moléculas (anticuerpos, vacunas o inhibidores) que neutralicen las
+    proteínas tóxicas responsables de la muerte neuronal sin afectar proteínas sanas.
+  </p>
+
+  <h3  style="color: aqua;">V.7.2 Protección y refuerzo neuronal</h3>
+  <p>
+    Estimulación eléctrica o magnética dirigida, factores neurotróficos y programas
+    de rehabilitación cognitiva y motora para mantener actividad neuronal.
+  </p>
+
+  <h3  style="color: aqua;">V.7.3 Prevención temprana y cribado nacional</h3>
+  <p>
+    Detección nacional de personas en riesgo mediante historial clínico,
+    genética y biomarcadores para actuar antes de los primeros síntomas.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ========== V.7 — Tiempos estimados y resultados =========== -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h3  style="color: aqua;">V.7.4 Tiempos estimados por enfermedad</h3>
+  <ul>
+    <li><strong>Alzheimer:</strong> 2–3 años (ensayos muy avanzados).</li>
+    <li><strong>ELA:</strong> 4–6 años.</li>
+    <li><strong>Parkinson:</strong> 3–5 años.</li>
+    <li><strong>Huntington:</strong> 3–5 años.</li>
+    <li><strong>FTLD y demencias:</strong> 5–7 años.</li>
+  </ul>
+
+  <h3  style="color: aqua;">V.7.5 Resultados esperados</h3>
+  <ul>
+    <li>Prevención efectiva en población en riesgo.</li>
+    <li>Freno del deterioro cognitivo y motor.</li>
+    <li>Mejoras funcionales parciales en fases avanzadas.</li>
+  </ul>
+
+  <h3  style="color: aqua;">V.7.6 Impacto social y económico</h3>
+  <p>
+    Menor gasto sanitario a largo plazo, mayor calidad de vida y posicionamiento de España
+    como potencia internacional en neurotecnología.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ============ V.8 — Innovación Oncológica Nacional ========= -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-left">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h2>V.8. Plan Nacional de Innovación Oncológica</h2>
+
+  <h3>Objetivo General</h3>
+  <p>
+    Reducir la mortalidad por cáncer, prevenir metástasis y mejorar la recuperación
+    de pacientes mediante terapias avanzadas y tecnologías de nueva generación.
+  </p>
+
+  <h3  style="color: aqua;">V.8.1 ATAQUE — Células comecáncer (CAR-T y CAR-M)</h3>
+  <p>
+    Uso de linfocitos T y macrófagos modificados genéticamente para destruir tumores con
+    alta precisión y activación controlada.
+  </p>
+
+  <h3  style="color: aqua;">V.8.2 CONTENCIÓN — Trampas para células metastásicas</h3>
+  <p>
+    Hidrogeles o dispositivos que atraen células tumorales a zonas seguras donde pueden
+    ser eliminadas sin dañar órganos críticos.
+  </p>
+
+  <h3  style="color: aqua;">V.8.3 REPARACIÓN — Incubadora regenerativa</h3>
+  <p>
+    Cámara biotecnológica que protege tejidos sanos durante tratamientos agresivos y
+    acelera su regeneración, incluyendo tecnología de respiración líquida para cáncer
+    de pulmón.
+  </p>
+</article>
+
+
+<!-- ========================================================== -->
+<!-- ============ V.8 — Fases, éxito e impacto ================= -->
+<!-- ========================================================== -->
+
+<article class="program-card asoma-right">
+  <img class="asomando" src="img/logo-cut.png">
+
+  <h3  style="color: aqua;">V.8.4 Fases de desarrollo</h3>
+  <ul>
+    <li><strong>Investigación:</strong> 1–2 años.</li>
+    <li><strong>Ensayos preclínicos:</strong> 2–3 años.</li>
+    <li><strong>Ensayos en humanos:</strong> 2–3 años.</li>
+    <li><strong>Optimización y escalado:</strong> 1–2 años.</li>
+  </ul>
+
+  <h3  style="color: aqua;">V.8.5 Expectativas de éxito</h3>
+  <ul>
+    <li>Reducción tumoral en 40–60% de pacientes.</li>
+    <li>Captura del 50–70% de células metastásicas.</li>
+    <li>Éxito total para 20–30% de casos iniciales.</li>
+  </ul>
+
+  <h3  style="color: aqua;">V.8.6 Impacto previsto</h3>
+  <ul>
+    <li>Menor mortalidad.</li>
+    <li>Protección de tejidos sanos.</li>
+    <li>España como referente internacional en innovación oncológica.</li>
+  </ul>
+
+  <p style="color: red;"><em>Programa en desarrollo — nuevas actualizaciones próximamente.</em></p>
+</article>
+
+
+
+
+
+
+        <!-- ... puedes continuar con el resto de secciones del programa aquí ... -->
+      </div>
+    </section>
+
+    <!-- CRONOLOGÍA / TIMELINE -->
+    <section id="cronologia" class="program-section" aria-labelledby="tab-cronologia">
+      <div class="program-content">
+        <div class="timeline" aria-hidden="false">
+
+          <!-- AÑO 1 -->
+          <div class="timeline-item left" role="article" aria-label="Año 1">
+            <div class="timeline-year">
+              <div class="dot">A1</div>
+              <div>
+                <div style="font-size:1.05rem;font-weight:900">Año 1 — Medidas urgentes</div>
+                <div style="font-size:0.85rem;color:#ffb3e6">Impacto inmediato</div>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li><strong>Economía:</strong> Exención IRPF ≤ 25.000 €, IRPF 5% tramo siguiente.</li>
+                <li><strong>Familias:</strong> 200 €/mes por hijo a exentos.</li>
+                <li><strong>Emprendimiento:</strong> Exención inicial para nuevos negocios; arranque de supermercados públicos.</li>
+                <li><strong>Social:</strong> Acogida y alojamiento temporal para migrantes; protección de vulnerables.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AÑO 2 -->
+          <div class="timeline-item right" role="article" aria-label="Año 2">
+            <div class="timeline-year">
+              <div class="dot">A2</div>
+              <div>
+                <div style="font-size:1.05rem;font-weight:900">Año 2 — Desarrollo</div>
+                <div style="font-size:0.85rem;color:#ffb3e6">Consolidación de medidas</div>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li><strong>Economía:</strong> Ampliación de incentivos familiares y medidas fiscales complementarias.</li>
+                <li><strong>Sanidad:</strong> Modernización de infraestructura y aumento contratación.</li>
+                <li><strong>Educación:</strong> Inicio implantación de reformas en primaria y mega-institutos.</li>
+                <li><strong>Emprendimiento:</strong> Salida de los primeros supermercados públicos; apoyo y estabilización.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AÑO 3 -->
+          <div class="timeline-item left" role="article" aria-label="Año 3">
+            <div class="timeline-year">
+              <div class="dot">A3</div>
+              <div>
+                <div style="font-size:1.05rem;font-weight:900">Año 3 — Reconstrucción y grandes inversiones</div>
+                <div style="font-size:0.85rem;color:#ffb3e6">Fase de ejecución masiva</div>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li><strong>Fiscal:</strong> Reforma fiscal progresiva (0% ≤22k, 15% 22–70k, 25% >70k).</li>
+                <li><strong>Energia & Recursos:</strong> Inicio extracción nacional de uranio y explotación de tierras raras públicas; reducción de precios de luz/agua.</li>
+                <li><strong>Ciencia:</strong> Lanzamiento programas neurodegeneración y oncología.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AÑO 4 -->
+          <div class="timeline-item right" role="article" aria-label="Año 4">
+            <div class="timeline-year">
+              <div class="dot">A4</div>
+              <div>
+                <div style="font-size:1.05rem;font-weight:900">Año 4 — Consolidación</div>
+                <div style="font-size:0.85rem;color:#ffb3e6">Evaluación y preparación del siguiente ciclo</div>
+              </div>
+            </div>
+            <div class="timeline-body">
+              <ul>
+                <li><strong>Evaluación:</strong> Ajustes fiscales según ingresos y evaluación de impacto.</li>
+                <li><strong>Transparencia:</strong> Portal del gasto operativo; portal de incidencias ciudadanas.</li>
+                <li><strong>Rendición de cuentas:</strong> Mecanismos de control y medidas si el gobierno no cumple.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div> <!-- .timeline -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+<footer>
+  <div class="social-links">
+    <a href="https://www.tiktok.com/@crooks.may.cry" target="_blank"><img src="img/tiktok.png"></a>
+    <a href="https://www.instagram.com/crooks_may_cry/" target="_blank"><img src="img/instagram.png"></a>
+    <a href="https://x.com/Crook_May_Cry" target="_blank"><img src="img/x.png"></a>
+  </div>
+
+  © <span id="year3"></span> Crooks May Cry.
+  <div class="support">Soporte técnico:
+    <a href="mailto:crooksmaycry.contacto@gmail.com">crooksmaycry.contacto@gmail.com</a>
+    <div><a href="legal.html" style="color:#ff88d8;">Política legal y licencia</a></div>
+
+  </div>
+</footer>
+
+  <script>
+    // pestañas
+    document.querySelectorAll('.program-tab').forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        document.querySelectorAll('.program-tab').forEach(t=>t.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.target;
+        document.querySelectorAll('.program-section').forEach(sec=>sec.classList.remove('active'));
+        const el = document.getElementById(target);
+        if(el) {
+          el.classList.add('active');
+          // smooth scroll to section top
+          setTimeout(()=> {
+            el.scrollIntoView({behavior:'smooth', block:'start'});
+          }, 80);
+        }
+      });
+    });
+
+    // año actual
+    document.getElementById('year3').textContent = new Date().getFullYear();
+
+    // mejora accesibilidad: si se llega con hash #cronologia, abrir pestaña
+    (function(){
+      const hash = location.hash.replace('#','');
+      if(hash === 'cronologia'){
+        const btn = document.querySelector('.program-tab[data-target="cronologia"]');
+        if(btn) btn.click();
+      }
+    })();
+  </script>
+
+</body>
+</html>

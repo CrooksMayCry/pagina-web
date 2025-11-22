@@ -1,0 +1,28 @@
+LICENSE – Crooks May Cry Website
+© 2025 Crooks May Cry. Todos los derechos reservados.
+
+Queda prohibido copiar, reproducir, distribuir, modificar, publicar o reutilizar total o parcialmente el contenido de este repositorio sin autorización escrita de Crooks May Cry.
+
+PROTECCIÓN DEL CONTENIDO:
+- Código HTML, CSS y JavaScript.
+- Animaciones, efectos visuales, transiciones y scripts personalizados.
+- Diseño visual, maquetación, estructura y estética de la web.
+- Imágenes, logotipos, gráficos y contenido multimedia.
+- Textos, programa político y contenido editorial.
+
+USO PERMITIDO:
+- Visualización del contenido con fines informativos.
+- Clonación del repositorio únicamente para revisiones privadas (no públicas).
+
+USO ESTRICTAMENTE PROHIBIDO:
+- Reutilizar el código en otro proyecto.
+- Copiar el diseño, estética o estructura de la web.
+- Difundir el contenido o publicarlo en otros repositorios.
+- Usar el logo o elementos identitarios de Crooks May Cry sin permiso.
+- Crear proyectos derivados basados en este repositorio.
+
+ACCIONES LEGALES:
+Cualquier infracción será perseguida conforme a la Ley de Propiedad Intelectual de España y la Unión Europea. Se pueden iniciar acciones legales, solicitar retirada de contenido copiado y reclamar daños.
+
+PARA SOLICITAR PERMISOS:
+crooksmaycry.contacto@gmail.com
