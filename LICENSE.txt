@@ -1,28 +1,21 @@
-LICENSE – Crooks May Cry Website
-© 2025 Crooks May Cry. Todos los derechos reservados.
+Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0)
 
-Queda prohibido copiar, reproducir, distribuir, modificar, publicar o reutilizar total o parcialmente el contenido de este repositorio sin autorización escrita de Crooks May Cry.
+Copyright © 2025 Crooks May Cry / Aarón Pérez
 
-PROTECCIÓN DEL CONTENIDO:
-- Código HTML, CSS y JavaScript.
-- Animaciones, efectos visuales, transiciones y scripts personalizados.
-- Diseño visual, maquetación, estructura y estética de la web.
-- Imágenes, logotipos, gráficos y contenido multimedia.
-- Textos, programa político y contenido editorial.
+You are free to:
 
-USO PERMITIDO:
-- Visualización del contenido con fines informativos.
-- Clonación del repositorio únicamente para revisiones privadas (no públicas).
+- Share — copy and redistribute the material in any medium or format.
+- The licensor cannot revoke these freedoms as long as you follow the license terms.
 
-USO ESTRICTAMENTE PROHIBIDO:
-- Reutilizar el código en otro proyecto.
-- Copiar el diseño, estética o estructura de la web.
-- Difundir el contenido o publicarlo en otros repositorios.
-- Usar el logo o elementos identitarios de Crooks May Cry sin permiso.
-- Crear proyectos derivados basados en este repositorio.
+Under the following terms:
 
-ACCIONES LEGALES:
-Cualquier infracción será perseguida conforme a la Ley de Propiedad Intelectual de España y la Unión Europea. Se pueden iniciar acciones legales, solicitar retirada de contenido copiado y reclamar daños.
+- Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. 
+  You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+  
+- NoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material.
+  You are NOT allowed to edit, alter, delete, or modify any part of the source code.
 
-PARA SOLICITAR PERMISOS:
-crooksmaycry.contacto@gmail.com
+- No additional restrictions — You may not apply legal terms or technological measures that legally restrict 
+  others from doing anything the license permits.
+
+Full License: https://creativecommons.org/licenses/by-nd/4.0/
