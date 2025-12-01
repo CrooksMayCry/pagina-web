@@ -1,11 +1,7 @@
 User-agent: *
 Allow: /
 
-# Evitar contenido duplicado
-Disallow: /img/temp/
-Disallow: /drafts/
-Disallow: /*?*
+Sitemap: https://crooksmaycry.github.io/pagina-web/sitemap_index.xml
 
-# Sitemap principal
-Sitemap: https://github.com/CrooksMayCry/pagina-web/blob/main/sitemap_test.xml
+
 
