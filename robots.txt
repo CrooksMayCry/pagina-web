@@ -7,4 +7,5 @@ Disallow: /drafts/
 Disallow: /*?*
 
 # Sitemap principal
-Sitemap: https://crooksmaycry.github.io/pagina-web/sitemap.xml
+Sitemap: https://github.com/CrooksMayCry/pagina-web/blob/main/sitemap_test.xml
+
